@@ -1,0 +1,79 @@
+// 1st
+let scores = [80, 90, 85, 95, 100];
+let avgScore = scores.reduce((total, score) => total + score, 0) / scores.length;
+console.log(avgScore);
+
+//2nd
+let testScores = [70, 85, 90, 95, 88, 92, 100];
+let maxScore = Math.max(...testScores);
+console.log(maxScore);
+
+//3rd
+let decimals = [5, 10, 15];
+let binaries = decimals.map(num => num.toString(2));
+console.log(binaries);
+
+//4th
+let boolArray1 = [true, false, true];
+let boolArray2 = [false, true, true];
+let andResult = boolArray1.map((val, index) => val && boolArray2[index]);
+console.log(andResult);
+
+//5th
+let oldPrices = [100, 200, 300, 400];
+let newPrices = [120, 250, 330, 440];
+let percentageIncrease = oldPrices.map((oldPrice, index) => ((newPrices[index] - oldPrice) / oldPrice) * 100);
+console.log(percentageIncrease);
+
+
+//6th
+let set1 = [1, 2, 3, 4];
+let set2 = [3, 4, 5, 6];
+let union = [...new Set([...set1, ...set2])];
+console.log(union);
+
+//7th
+let numbersArray = [1, 2, 3, 3, 4, 4, 4, 5, 6, 6];
+let mode = numbersArray.sort((a, b) =>
+    numbersArray.filter(v => v === a).length - numbersArray.filter(v => v === b).length
+).pop();
+console.log(mode); 
+
+//8th
+let times = [130, 75, 90];
+let timeInHours = times.map(time => {
+    let hours = Math.floor(time / 60);
+    let minutes = time % 60;
+    return `${hours} hours and ${minutes} minutes`;
+});
+console.log(timeInHours);
+
+//9th
+
+let details = [
+    { principal: 10000, rateOfInterest: 5, noOfYears: 4 },
+    { principal: 15000, rateOfInterest: 4, noOfYears: 3 }
+];
+
+let interest = details.map(d => (d.principal * d.rateOfInterest * d.noOfYears) / 100);
+console.log(interest);
+
+
+//10th
+let studentsMarks = [
+    { subject1Marks: 80, subject2Marks: 90, subject3Marks: 70 },
+    { subject1Marks: 60, subject2Marks: 50, subject3Marks: 65 }
+];
+
+let totalMarks = studentsMarks.map(student => student.subject1Marks + student.subject2Marks + student.subject3Marks);
+console.log(totalMarks);
+
+
+//11th
+let expenses = [
+    { rent: 1000, groceries: 500, utilities: 200 },
+    { rent: 800, groceries: 400, utilities: 150 }
+];
+
+let totalExpenses = expenses.map(exp => exp.rent + exp.groceries + exp.utilities);
+console.log(totalExpenses);
